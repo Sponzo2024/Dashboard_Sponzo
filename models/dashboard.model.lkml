@@ -10,7 +10,18 @@ datagroup: dashboard_default_datagroup {
 
 persist_with: dashboard_default_datagroup
 
-explore: eventos {}
+explore: eventos {
+
+    join: patrocinadores {
+      sql_on: ${eventos.id_evento} = ${patrocinadores.id_evento} ;;
+      relationship: one_to_many # Could be excluded since many_to_one is the default
+      type: left_outer
+    }
+  access_filter: {
+    field: eventos.organizadores
+    user_attribute: organizador
+  }
+  }
 
 explore: ticket {}
 
@@ -19,4 +30,3 @@ explore: patrocinadores {}
 explore: generos {}
 
 explore: venues {}
-

@@ -64,6 +64,49 @@ view: eventos {
     type: string
     sql: ${TABLE}.Tiquetera ;;
   }
+  #Ejercicio medidas y dimensiones creadas
+  dimension: evento_google {
+    sql: ${evento} ;;
+    link: {
+      label: "Google"
+      url: "https://www.google.com/search?q={{ value }}"
+      icon_url: "https://google.com/favicon.ico"
+    }
+  }
+  parameter: date_granularity {
+    type: unquoted
+    allowed_value: {
+      label: "Year"
+      value: "year"
+    }
+    allowed_value: {
+      label: "Month"
+      value: "month"
+    }
+    allowed_value: {
+      label: "Week"
+      value: "week"
+    }
+  }
+  dimension: date {
+
+    sql: {% if date_granularity._parameter_value == 'year' %}
+          ${fecha_year}
+        {% elsif date_granularity._parameter_value == 'month' %}
+          ${fecha_month}
+        {% elsif date_granularity._parameter_value == 'week' %}
+          ${fecha_week}
+        {% endif %} ;;
+  }
+  dimension: Categorizacion_de_edad{
+    type: string
+    sql: CASE
+      WHEN ${edad_m__nima}>=18 then "Mayores de edad"
+      when ${edad_m__nima}<18 then "Menores de edad"
+      else "Indefinido"
+      END ;;
+  }
+
   measure: count {
     type: count
   }
