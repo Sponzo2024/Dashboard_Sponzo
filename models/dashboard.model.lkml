@@ -17,10 +17,10 @@ explore: eventos {
       relationship: one_to_many # Could be excluded since many_to_one is the default
       type: left_outer
     }
-  access_filter: {
-    field: eventos.organizadores
-    user_attribute: organizador
-  }
+#  access_filter: {
+ #   field: eventos.organizadores
+  #  user_attribute: organizador
+  #}
   }
 
 explore: ticket {}
