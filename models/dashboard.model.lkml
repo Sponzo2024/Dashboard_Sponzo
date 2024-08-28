@@ -17,6 +17,12 @@ explore: eventos {
       relationship: one_to_many # Could be excluded since many_to_one is the default
       type: left_outer
     }
+    join: ticket {
+      sql_on: ${eventos.id_evento} = ${ticket.id_evento} ;;
+      relationship: one_to_many # Could be excluded since many_to_one is the default
+      type: left_outer
+    }
+
 #  access_filter: {
  #   field: eventos.organizadores
   #  user_attribute: organizador
@@ -30,3 +36,5 @@ explore: patrocinadores {}
 explore: generos {}
 
 explore: venues {}
+
+explore: sql_consulta_ejp {}
