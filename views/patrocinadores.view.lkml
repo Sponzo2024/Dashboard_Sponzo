@@ -2,6 +2,7 @@ view: patrocinadores {
   sql_table_name: `Prueba.Patrocinadores` ;;
 
   dimension: id_evento {
+    primary_key: yes
     type: number
     sql: ${TABLE}.`ID evento` ;;
   }
