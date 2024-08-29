@@ -6,6 +6,7 @@ view: ticket {
     sql: ${TABLE}.Agotado ;;
   }
   dimension: id_evento {
+    primary_key: yes
     type: number
     sql: ${TABLE}.`ID Evento` ;;
   }
