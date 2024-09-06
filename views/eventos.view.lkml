@@ -37,6 +37,7 @@ view: eventos {
     sql: ${TABLE}.ID_artista ;;
   }
   dimension: id_evento {
+    primary_key: yes
     type: number
     sql: ${TABLE}.ID_Evento ;;
   }
@@ -110,4 +111,25 @@ view: eventos {
   measure: count {
     type: count
   }
+  measure: count_evento {
+    type: number
+    sql: count(${evento});;
+  }
+  measure: count_patrocinio {
+    type: number
+    sql: count(${patrocinio});;
+  }
+  measure: count_distinct_evento {
+    type: count_distinct
+    sql: ${evento};;
+  }
+  measure: count_distinct_organizadores{
+    type: count_distinct
+    sql: ${organizadores};;
+  }
+  measure: count_distinct_tiquetera{
+    type: count_distinct
+    sql: ${tiquetera};;
+  }
+
 }
