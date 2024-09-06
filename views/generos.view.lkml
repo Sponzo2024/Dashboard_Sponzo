@@ -3,7 +3,7 @@ view: generos {
 
   dimension: genero {
     type: string
-    sql: ${TABLE}.Gnero ;;
+    sql: ${TABLE}.G__nero ;;
   }
   dimension: id_evento {
     type: number

@@ -17,6 +17,12 @@ view: eventos {
     type: number
     sql: ${TABLE}.Edad_m__nima ;;
   }
+  dimension: age_tier {
+    type: tier
+    tiers: [0,6,13,18]
+    style: integer
+    sql: ${edad_m__nima} ;;
+  }
   dimension: empresa {
     type: string
     sql: ${TABLE}.Empresa ;;
