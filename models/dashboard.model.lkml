@@ -22,6 +22,11 @@ explore: eventos {
       relationship: one_to_many # Could be excluded since many_to_one is the default
       type: left_outer
     }
+    join: generos {
+      sql_on: ${eventos.id_evento} = ${generos.id_evento} ;;
+      relationship: one_to_many
+      type: left_outer
+    }
 
 #  access_filter: {
  #   field: eventos.organizadores
