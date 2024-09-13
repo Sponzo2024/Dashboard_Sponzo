@@ -6,7 +6,7 @@ view: eventos {
     sql: ${TABLE}.__patrocidores ;;
   }
   dimension: aforo {
-    type: string
+    type: number
     sql: ${TABLE}.Aforo ;;
   }
   dimension: d__as {
@@ -136,6 +136,10 @@ view: eventos {
   measure: count_distinct_tiquetera{
     type: count_distinct
     sql: ${tiquetera};;
+  }
+  measure: avg_aforo {
+    type: average
+    sql: ${aforo} ;;
   }
 
 }
