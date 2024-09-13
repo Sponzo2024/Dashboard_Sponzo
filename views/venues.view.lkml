@@ -1,61 +1,45 @@
 view: venues {
-  sql_table_name: `Prueba.Venues` ;;
+  sql_table_name: `stately-lambda-421922.Prueba.Venues` ;;
 
-  dimension: string_field_0 {
+  dimension: activo {
     type: string
-    sql: ${TABLE}.string_field_0 ;;
+    sql: ${TABLE}.Activo ;;
   }
-  dimension: string_field_1 {
+  dimension: aforo {
     type: string
-    sql: ${TABLE}.string_field_1 ;;
+    sql: ${TABLE}.Aforo ;;
   }
-  dimension: string_field_10 {
+  dimension: categoria_del_lugar {
     type: string
-    sql: ${TABLE}.string_field_10 ;;
+    sql: ${TABLE}.Categoria_del_lugar ;;
   }
-  dimension: string_field_11 {
+  dimension: cielo_abierto {
     type: string
-    sql: ${TABLE}.string_field_11 ;;
+    sql: ${TABLE}.Cielo_abierto ;;
   }
-  dimension: string_field_12 {
+  dimension: ciudad {
     type: string
-    sql: ${TABLE}.string_field_12 ;;
+    sql: ${TABLE}.Ciudad ;;
   }
-  dimension: string_field_13 {
+  dimension: coordenadas {
     type: string
-    sql: ${TABLE}.string_field_13 ;;
+    sql: ${TABLE}.Coordenadas ;;
   }
-  dimension: string_field_2 {
+  dimension: direccion {
     type: string
-    sql: ${TABLE}.string_field_2 ;;
+    sql: ${TABLE}.Direccion ;;
   }
-  dimension: string_field_3 {
+  dimension: id_venue {
     type: string
-    sql: ${TABLE}.string_field_3 ;;
+    sql: ${TABLE}.ID_Venue ;;
   }
-  dimension: string_field_4 {
+  dimension: lugar {
     type: string
-    sql: ${TABLE}.string_field_4 ;;
+    sql: ${TABLE}.Lugar ;;
   }
-  dimension: string_field_5 {
+  dimension: pais {
     type: string
-    sql: ${TABLE}.string_field_5 ;;
-  }
-  dimension: string_field_6 {
-    type: string
-    sql: ${TABLE}.string_field_6 ;;
-  }
-  dimension: string_field_7 {
-    type: string
-    sql: ${TABLE}.string_field_7 ;;
-  }
-  dimension: string_field_8 {
-    type: string
-    sql: ${TABLE}.string_field_8 ;;
-  }
-  dimension: string_field_9 {
-    type: string
-    sql: ${TABLE}.string_field_9 ;;
+    sql: ${TABLE}.Pais ;;
   }
   measure: count {
     type: count
