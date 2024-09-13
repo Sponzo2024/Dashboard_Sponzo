@@ -6,7 +6,7 @@ view: eventos {
     sql: ${TABLE}.__patrocidores ;;
   }
   dimension: aforo {
-    type: string
+    type: number
     sql: ${TABLE}.Aforo ;;
   }
   dimension: d__as {
@@ -16,6 +16,12 @@ view: eventos {
   dimension: edad_m__nima {
     type: number
     sql: ${TABLE}.Edad_m__nima ;;
+  }
+  dimension: age_tier {
+    type: tier
+    tiers: [0,6,13,18]
+    style: integer
+    sql: ${edad_m__nima} ;;
   }
   dimension: empresa {
     type: string
@@ -37,6 +43,7 @@ view: eventos {
     sql: ${TABLE}.ID_artista ;;
   }
   dimension: id_evento {
+    primary_key: yes
     type: number
     sql: ${TABLE}.ID_Evento ;;
   }
@@ -110,4 +117,29 @@ view: eventos {
   measure: count {
     type: count
   }
+  measure: count_evento {
+    type: number
+    sql: count(${evento});;
+  }
+  measure: count_patrocinio {
+    type: number
+    sql: count(${patrocinio});;
+  }
+  measure: count_distinct_evento {
+    type: count_distinct
+    sql: ${evento};;
+  }
+  measure: count_distinct_organizadores{
+    type: count_distinct
+    sql: ${organizadores};;
+  }
+  measure: count_distinct_tiquetera{
+    type: count_distinct
+    sql: ${tiquetera};;
+  }
+  measure: avg_aforo {
+    type: average
+    sql: ${aforo} ;;
+  }
+
 }

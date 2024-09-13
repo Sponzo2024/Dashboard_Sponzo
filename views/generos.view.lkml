@@ -1,13 +1,13 @@
 view: generos {
   sql_table_name: `Prueba.Generos` ;;
 
-  dimension: gnero {
+  dimension: genero {
     type: string
-    sql: ${TABLE}.`Género` ;;
+    sql: ${TABLE}.G__nero ;;
   }
   dimension: id_evento {
     type: number
-    sql: ${TABLE}.`ID Evento` ;;
+    sql: ${TABLE}.ID_Evento ;;
   }
   measure: count {
     type: count

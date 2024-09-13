@@ -4,7 +4,7 @@ view: patrocinadores {
   dimension: id_evento {
     primary_key: yes
     type: number
-    sql: ${TABLE}.`ID evento` ;;
+    sql: ${TABLE}.ID_evento ;;
   }
   dimension: patrocinador2 {
     type: string
@@ -16,9 +16,17 @@ view: patrocinadores {
   }
   dimension: tipo_de_patrocinador {
     type: string
-    sql: ${TABLE}.`Tipo de patrocinador` ;;
+    sql: ${TABLE}.Tipo_de_patrocinador ;;
   }
   measure: count {
     type: count
+  }
+  measure: count_distinct_patrocinador {
+    type: count_distinct
+    sql: ${patrocinador2} ;;
+  }
+  measure: count_patrocinador {
+    type: number
+    sql: count(${patrocinador2}) ;;
   }
 }
