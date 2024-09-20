@@ -9,6 +9,7 @@ view: eventos {
     type: number
     sql: ${TABLE}.Aforo ;;
   }
+
   dimension: d__as {
     type: number
     sql: ${TABLE}.D__as ;;
@@ -137,9 +138,14 @@ view: eventos {
     type: count_distinct
     sql: ${tiquetera};;
   }
-  measure: avg_aforo {
+
+  measure: avg_aforo1 {
     type: average
-    sql: ${aforo} ;;
+    sql: CAST(${TABLE}.Aforo AS NUMERIC) ;;
+  }
+  measure: total_patrocinadores{
+    type: sum
+    sql: ${__patrocidores} ;;
   }
 
 }
