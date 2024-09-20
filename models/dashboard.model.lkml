@@ -27,12 +27,17 @@ explore: eventos {
       relationship: one_to_many
       type: left_outer
     }
-
+    join: venues {
+      sql_on: ${eventos.id_venue} = ${venues.id_venue} ;;
+      relationship: one_to_many
+      type: left_outer
+  }
 #  access_filter: {
  #   field: eventos.organizadores
   #  user_attribute: organizador
   #}
   }
+
 
 explore: ticket {}
 
